@@ -4,7 +4,21 @@ var template = [
     {
         label: '凤来怡温泉会所',
         submenu: [
-            {label: '精品SPA'},
+            {
+                label: '精品SPA',
+                click: ()=>{
+                    win = new BrowserWindow({
+                        width: 300,
+                        height: 300
+                    })
+
+                    win.loadFile('yellow.html')
+
+                    win.on('closed', ()=>{
+                        win = null
+                    })
+                }
+            },
             {label: '泰式按摩'}
         ]
     },
