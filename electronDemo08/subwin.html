@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>我是子窗口</div>
+    <button id="subBtn">向父窗口传递数据</button>
+</body>
+<script>
+    let subBtn = this.document.querySelector('#subBtn')
+    subBtn.onclick = function(e){
+        // 将消息发送给指定源的父窗口，未指定来源则发送给*,即所有窗口
+        window.opener.postMessage('我是子窗口传递过来的消息')
+    }
+
+</script>
+</html>

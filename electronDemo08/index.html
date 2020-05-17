@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Main Page
+    <button id="btn">打开子窗口</button>
+    <div id="subContent"></div>
+</body>
+<script>
+    var btn = this.document.querySelector('#btn')
+
+    btn.onclick = function(){
+        // 打开子窗口
+        window.open('subwin.html')
+    }
+
+    var subContent = this.document.querySelector('#subContent')
+
+    // 添加window.addEventListener，接收子窗口传递过来的消息
+    window.addEventListener('message', (msg)=>{
+        let message = JSON.stringify(msg.data)
+        subContent.innerHTML = message
+
+    })
+</script>
+</html>
