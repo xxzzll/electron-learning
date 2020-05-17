@@ -1,4 +1,4 @@
-var fs =  require('fs')
+var fs =  require('fs') // 读取文件模块
 
 window.onload = function(){
     var btn = this.document.querySelector("#btn")

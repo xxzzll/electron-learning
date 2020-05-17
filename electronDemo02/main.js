@@ -8,7 +8,7 @@ app.on('ready', ()=>{
     mainWindow = new BrowserWindow({
         width:300,
         height:400,
-        webPreferences: {nodeIntegration: true}
+        webPreferences: {nodeIntegration: true} // 增加全量使用nodejs设置
     })
     mainWindow.loadFile('index.html') // 加载 html 页面
     mainWindow.on('closed', ()=>{
