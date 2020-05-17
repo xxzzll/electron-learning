@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="saveBtn">保存文件</button>
+</body>
+<script>
+    const {dialog} = require('electron').remote
+    const fs = require('fs')
+
+    let saveBtn = document.querySelector('#saveBtn')
+    saveBtn.onclick = function(){
+        // 保存对话框
+        dialog.showSaveDialog({
+            titile: '保存文件'
+        }).then(result=>{
+            console.log(result)
+            // fs 模块功能：向文件中写入数据
+            fs.writeFileSync(result.filePath, 'https://github.com/xxzzll')
+        }).catch(err=>{
+            console.log(err)
+        })
+    }
+
+</script>
+</html>
