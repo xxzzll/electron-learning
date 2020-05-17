@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Main Page
+    <button id="btn">获取小姐姐</button>
+    <img id="image" style="width: 100%;" />
+</body>
+<script>
+    let btn = this.document.querySelector('#btn')
+
+    const {dialog} = require('electron').remote
+
+    btn.onclick = function(){
+        dialog.showOpenDialog({
+            title: '请选择你喜欢的小姐姐照片',
+            defaultPath: 'xiaojiejie.jpg',
+            filters:[{name: 'img', extensions: ['jpg']}],
+            buttonLabel: '打开小姐姐'
+        }).then(result=>{
+            console.log(result)
+
+            var image = document.querySelector('#image')
+            image.setAttribute('src', result.filePaths[0])
+        }).catch(error=>{
+            console.log(error)
+        })
+    }
+
+</script>
+</html>
