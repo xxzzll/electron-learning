@@ -12,7 +12,7 @@ window.onload = function() {
             height: 400
         })
     
-        newWin.loadFile('demo.html')
+        newWin.loadFile('newWin.html')
     
         newWin.on('closed', ()=>{
             newWin = null // 窗口关闭时，对象引用置空
