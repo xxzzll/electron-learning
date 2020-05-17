@@ -7,5 +7,5 @@ aHref.onclick = function(e){
     
     var href = this.getAttribute('href')
 
-    shell.openExternal(href)
+    shell.openExternal(href) // 使用外部浏览器打开超链接
 }
