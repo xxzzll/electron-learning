@@ -6,6 +6,7 @@ var template = [
         submenu: [
             {
                 label: '精品SPA',
+                accelerator: 'ctrl+n',
                 click: ()=>{
                     win = new BrowserWindow({
                         width: 300,
